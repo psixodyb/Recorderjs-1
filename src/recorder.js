@@ -1,20 +1,21 @@
 import InlineWorker from 'inline-worker';
 
 export class Recorder {
-    config = {
-        bufferLen: 4096,
-        numChannels: 2,
-        mimeType: 'audio/wav'
-    };
 
-    recording = false;
-
-    callbacks = {
-        getBuffer: [],
-        exportWAV: []
-    };
 
     constructor(source, cfg) {
+        this.config = {
+            bufferLen: 4096,
+            numChannels: 2,
+            mimeType: 'audio/wav'
+        };
+
+        this.recording = false;
+
+        this.callbacks = {
+            getBuffer: [],
+            exportWAV: []
+        };
         Object.assign(this.config, cfg);
         this.context = source.context;
         this.node = (this.context.createScriptProcessor ||
