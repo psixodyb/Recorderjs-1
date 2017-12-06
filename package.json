@@ -1,6 +1,6 @@
 {
   "name": "record-audio-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "record audio on js use web audio api",
   "main": "index.js",
   "repository": {
