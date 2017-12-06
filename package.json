@@ -2,15 +2,7 @@
   "name": "record-audio-js",
   "version": "0.0.1",
   "description": "record audio on js use web audio api",
-  "main": "src/recorder.js",
-  "directories": {
-    "example": "example"
-  },
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/psixodyb/record-audio-js.git"
@@ -25,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/psixodyb/record-audio-js/issues"
   },
-  "homepage": "https://github.com/psixodyb/record-audio-js#readme"
+  "homepage": "https://github.com/psixodyb/record-audio-js#readme",
+  "dependencies": {
+    "inline-worker": "^1.1.0"
+  }
 }
