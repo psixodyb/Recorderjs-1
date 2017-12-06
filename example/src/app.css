@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-basis: 50%;
+  flex-direction: column;
+}
+.audio__label {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.audio__track {
+    margin-top: 20px;
+}
+/*audio {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}*/

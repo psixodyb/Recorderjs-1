@@ -6,13 +6,10 @@ const cleanWebpackPlugin = require('clean-webpack-plugin');
 const RuntimeAnalyzerPlugin = require('webpack-runtime-analyzer');
 const webpack = require('webpack');
 
-console.log("\r\n\r\n ============================\r\n\r\n");
-console.log(" Environment: " + ENV);
-console.log("\r\n\r\n ============================\r\n\r\n");
 module.exports = {
     entry: path.join(__dirname,'src/index.js'),
     output: {
-        path: path.resolve(__dirname ,ENV !=='prod' ? 'dist':''),
+        path: path.resolve(__dirname ,ENV !=='prod' ? 'dist':'../demo'),
         filename: '[name].bundle.js',
         chunkFilename: '[name].bundle.js',
     },
@@ -29,12 +26,31 @@ module.exports = {
                 },
             },
             {
+                test: /\.css$/ ,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader',
+                ]
+            },
+            {
                 test: /\.html/,
                 use: {
                     loader: 'html-loader',
                     options: {
-                        attrs: ['img:src','source:src']
+                        attrs: ['img:src']
                     }
+                }
+            },
+            {
+                test: /\.pug/,
+                use: {
+                    loader: 'pug-loader',
                 }
             },
             {
@@ -53,7 +69,7 @@ module.exports = {
     },
     plugins: [
      new htmlWebpackPlugin({
-        template: path.join(__dirname,'src/index.html')
+        template: path.join(__dirname,'src/index.pug')
     }),
     new RuntimeAnalyzerPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
@@ -64,4 +80,10 @@ module.exports = {
       contentBase: path.resolve(__dirname ,'dist'),
     },
     devtool: "inline-cheap-module-source-map",
+    resolve: {
+        alias: {
+            assets: path.resolve(__dirname, 'src/assets'),
+            app: path.resolve(__dirname, 'src/app')
+        }
+    }
 }
