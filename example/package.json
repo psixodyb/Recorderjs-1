@@ -1,0 +1,32 @@
+{
+  "name": "example",
+  "version": "0.0.1",
+  "description": "example record-audio-js",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "record-audio-js": "^0.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "loadash": "^1.0.0",
+    "pug": "^2.0.0-rc.4",
+    "pug-loader": "^2.3.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1",
+    "webpack-runtime-analyzer": "^1.5.0"
+  },
+  "scripts": {
+    "dev": "WEBPACK_ENV=dev webpack-dev-server",
+    "build": "WEBPACK_ENV=prod webpack"
+  },
+  "author": "ks.emmure",
+  "license": "ISC"
+}
